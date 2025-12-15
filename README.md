@@ -4,87 +4,134 @@
 This is the frist homwork for Object oriented design
 
 
+<table dir="rtl">
 
-<table border="1" cellpadding="6" cellspacing="0">
 
-<thead>
 
-<tr>
+  <thead>
 
-&nbsp;   <th>ردیف</th>
 
-&nbsp;   <th>کلاس تغییر یافته (ارسال پیام)</th>
+    <tr>
 
-&nbsp;   <th>توضیح کوتاه درباره تغییر (افزودن روش ارسال پیام)</th>
 
-&nbsp;   <th>کلاس تغییر یافته (پرداخت)</th>
+      <th>ردیف</th>
 
-&nbsp;   <th>توضیح کوتاه درباره تغییر (افزودن روش پرداخت)</th>
 
-</tr>
+      <th>کلاس تغییر یافته (ارسال پیام)</th>
 
-</thead>
 
-<tbody>
+      <th>توضیح کوتاه درباره تغییر</th>
 
-<tr>
 
-&nbsp;   <td>1</td>
+      <th>کلاس تغییر یافته (پرداخت)</th>
 
-&nbsp;   <td>MessageSender</td>
 
-&nbsp;   <td>افزودن قابلیت جدید برای ارسال پیامک از طریق ایجاد کلاس SmsSender که از اینترفیس MessageSender پیروی می‌کند</td>
+      <th>توضیح کوتاه درباره تغییر</th>
 
-&nbsp;   <td>PaymentProcessor</td>
 
-&nbsp;   <td>افزودن تابع جدید به نام payOnSite برای پشتیبانی از پرداخت حضوری</td>
+    </tr>
 
-</tr>
 
-<tr>
+  </thead>
 
-&nbsp;   <td>2</td>
 
-&nbsp;   <td>EmailSender</td>
+  <tbody>
 
-&nbsp;   <td>بدون تغییر — الگوی قبلی برقرار ماند و صرفاً کلاس جدید برای SMS اضافه شد</td>
 
-&nbsp;   <td>ReservationService</td>
+    <tr>
 
-&nbsp;   <td>اضافه کردن case جدید برای PaymentMethods.ONSITE در ساختار switch مربوط به پرداخت</td>
 
-</tr>
+      <td>1</td>
 
-<tr>
 
-&nbsp;   <td>3</td>
+      <td>MessageSender</td>
 
-&nbsp;   <td>SmsSender (کلاس جدید)</td>
 
-&nbsp;   <td>ایجاد یک کلاس جدید برای ارسال پیامک مطابق ساختار EmailSender</td>
+      <td>افزودن قابلیت ارسال پیامک با ایجاد SmsSender</td>
 
-&nbsp;   <td>PaymentMethods</td>
 
-&nbsp;   <td>افزودن مقدار جدید enum به نام ONSITE جهت معرفی روش پرداخت حضوری</td>
+      <td>PaymentProcessor</td>
 
-</tr>
 
-<tr>
+      <td>افزودن payOnSite جهت پرداخت حضوری</td>
 
-&nbsp;   <td>4</td>
 
-&nbsp;   <td>ReservationService</td>
+    </tr>
 
-&nbsp;   <td>افزودن case جدید برای ارسال پیامک (Notifier.SMS) و استفاده از SmsSender</td>
 
-&nbsp;   <td>—</td>
+    <tr>
 
-&nbsp;   <td>—</td>
 
-</tr>
+      <td>2</td>
 
-</tbody>
+
+      <td>EmailSender</td>
+
+
+      <td>بدون تغییر، فقط کلاس SMS اضافه شد</td>
+
+
+      <td>ReservationService</td>
+
+
+      <td>افزودن case جدید برای ONSITE</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td>3</td>
+
+
+      <td>SmsSender</td>
+
+
+      <td>ایجاد کلاس جدید مشابه EmailSender</td>
+
+
+      <td>PaymentMethods</td>
+
+
+      <td>افزودن مقدار جدید ONSITE</td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td>4</td>
+
+
+      <td>ReservationService</td>
+
+
+      <td>افزودن case برای Notifier.SMS</td>
+
+
+      <td>—</td>
+
+
+      <td>—</td>
+
+
+    </tr>
+
+
+  </tbody>
 
 </table>
 
 
+
+
+
+
+
+
+
+0 commit commentsComments0 (0)
