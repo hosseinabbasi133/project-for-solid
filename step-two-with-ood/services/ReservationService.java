@@ -4,7 +4,8 @@ import constants.Notifier;
 import constants.PaymentMethods;
 
 public class ReservationService {
-    private Notifier notifier = Notifier.EMAIL; //default Notifier
+
+    private Notifier notifier = Notifier.EMAIL; // default Notifier
     private PaymentProcessor paymentProcessor = new PaymentProcessor();
 
     public void makeReservation(Reservation res, PaymentMethods paymentType, Notifier notifier){
@@ -16,19 +17,23 @@ public class ReservationService {
         }
 
         switch (paymentType){
-            case CARD:
-                paymentProcessor.payByCard(res.totalPrice());
-                break;
-            case PAYPAL:
-                paymentProcessor.payByPayPal(res.totalPrice());
-                break;
-            case CASH:
-                paymentProcessor.payByCash(res.totalPrice());
-                break;
-            case ONSITE:
-                paymentProcessor.payOnSite(res.totalPrice());
-                break;
-        }
+    case CARD:
+        paymentProcessor.payByCard(res.totalPrice());
+        break;
+
+    case PAYPAL:
+        paymentProcessor.payByPayPal(res.totalPrice());
+        break;
+
+    case CASH:
+        paymentProcessor.payByCash(res.totalPrice());
+        break;
+
+    case ONSITE:
+        paymentProcessor.payOnSite(res.totalPrice());
+        break;
+}
+
 
         System.out.println("----- INVOICE -----");
         System.out.println("hotel.Customer: " + res.customer.name);
@@ -36,19 +41,19 @@ public class ReservationService {
         System.out.println("Total: " + res.totalPrice());
         System.out.println("-------------------");
 
-       switch (this.notifier){
-           case EMAIL :
-           EmailSender emailSender = new EmailSender();
-           emailSender.sendEmail(res.customer.email, "Your reservation confirmed!");
-           break;
-           
+        switch (notifier){
+            case EMAIL:
+                EmailSender emailSender = new EmailSender();
+                emailSender.sendEmail(res.customer.email, "Your reservation confirmed!");
+                break;
+
             case SMS:
                 SmsSender smsSender = new SmsSender();
                 smsSender.sendEmail(res.customer.mobile, "Your reservation is confirmed!");
                 break;
 
-           default:
-               System.out.println("There is no Message Provider");
-       }
+            default:
+                System.out.println("There is no Message Provider");
+        }
     }
 }

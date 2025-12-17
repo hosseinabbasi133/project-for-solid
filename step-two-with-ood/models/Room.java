@@ -1,13 +1,23 @@
-package models;
-
 public class Room {
-    public String number;
-    public String type; // "standard" or "luxury"
-    public double price;
+
+    protected String number;
+    protected String type;
+    protected double price;
+
+    private List<RoomService> services = new ArrayList<>();
 
     public Room(String number, String type, double price){
         this.number = number;
         this.type = type;
         this.price = price;
+    }
+
+    public void addService(RoomService service){
+        services.add(service);
+        service.apply(this);
+    }
+
+    public String getNumber(){
+        return number;
     }
 }

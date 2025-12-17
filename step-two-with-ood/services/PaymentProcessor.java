@@ -1,21 +1,11 @@
-package services;
+public class PaymentProcessor {
+    private final PaymentMethod paymentMethod;
 
-class PaymentProcessor {
-
-    public void payByCard(double amount){
-        System.out.println("Paid by card: " + amount);
+    public PaymentProcessor(PaymentMethod paymentMethod){
+        this.paymentMethod = paymentMethod;
     }
 
-    public void payByCash(double amount){
-        System.out.println("Paid by cash: " + amount);
-    }
-
-    public void payByPayPal(double amount){
-        System.out.println("Paid by PayPal: " + amount);
-    }
-
-    public void payOnSite(double amount){
-        System.out.println("Payment will be made onsite. Amount: " + amount);
+    public void process(double amount){
+        paymentMethod.pay(amount);
     }
 }
-   
